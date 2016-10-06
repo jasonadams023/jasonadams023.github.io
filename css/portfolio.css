@@ -1,0 +1,50 @@
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+h2 {
+	padding-bottom: 1em;
+}
+
+.panel-title {
+	font-size: 32px;
+}
+
+#portfolio, #about {
+	color: #00004d;
+}
+
+#portfolio a {
+	color: #00004d;
+	text-decoration: none;
+	border-bottom: .15em solid;
+}
+
+#portfolio a:focus {
+	color: #00004d;
+}
+
+#portfolio-links a {
+	border-bottom: none;
+	margin-right: 2em;
+	margin-left: 2em;
+}
+
+#portfolio-links a:hover {
+	border-bottom: 2px solid;
+}
+
+#contact a {
+	color: white;
+}
+
+.skills ul li {
+	margin-bottom: 2em;
+	font-size: 1em;
+}
