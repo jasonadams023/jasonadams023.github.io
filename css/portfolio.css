@@ -26,11 +26,11 @@ h2 {
 	border-bottom: .15em solid;
 }
 
-#portfolio a:focus {
+.portfolio a:focus {
 	color: #00004d;
 }
 
-#portfolio-links a {
+.portfolio-links a {
 	border-bottom: none;
 	margin-right: 2em;
 	margin-left: 2em;
