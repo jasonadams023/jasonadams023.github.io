@@ -58,9 +58,9 @@ export default function Portfolio() {
   const [displayContent, setDisplayContent] = useState(false);
   const [longDescription, setLongDescription] = useState('');
   const [repoLink, setRepoLink] = useState('');
-  const [siteLink, setSiteLink] = useState(null);
+  const [siteLink, setSiteLink] = useState('');
 
-  function onClick(newDescription: string, newRepoLink: string, newSiteLink?: string): void {
+  function onClick(newDescription: string, newRepoLink: string, newSiteLink: string): void {
     if (displayContent && newDescription === longDescription) {
       setDisplayContent(false);
     } else {
@@ -77,7 +77,7 @@ export default function Portfolio() {
         key={project.title}
         title={project.title}
         shortDescription={project.shortDescription}
-        callback={() => onClick(project.longDescription, project.repoLink, project.siteLink)}
+        callback={() => onClick(project.longDescription, project.repoLink, project.siteLink ?? '')}
       />
     );
   });

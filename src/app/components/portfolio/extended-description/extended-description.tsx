@@ -3,7 +3,7 @@ import React from 'react';
 interface ExtendedDescriptionProps {
   longDescription: string;
   repoLink: string;
-  siteLink: string | null;
+  siteLink: string;
 }
 
 export default function ExtendedDescription({ longDescription, repoLink, siteLink }: ExtendedDescriptionProps) {
