@@ -2,14 +2,16 @@ import React from 'react';
 
 interface ExtendedDescriptionProps {
   longDescription: string;
-  link: string;
+  repoLink: string;
+  siteLink: string | null;
 }
 
-export default function ExtendedDescription({ longDescription, link }: ExtendedDescriptionProps) {
+export default function ExtendedDescription({ longDescription, repoLink, siteLink }: ExtendedDescriptionProps) {
   return (
     <div>
       <p>{longDescription}</p>
-      <a href={link}>GitHub</a>
+      <a href={repoLink}>GitHub</a>
+      { siteLink ? (<a href={siteLink}>Site</a>) : null }
     </div>
   )
 }

@@ -9,7 +9,8 @@ interface Project {
   title: string;
   shortDescription: string;
   longDescription: string;
-  link: string;
+  repoLink: string;
+  siteLink?: string;
 }
 
 const projects: Project[] = [
@@ -17,52 +18,55 @@ const projects: Project[] = [
     title: 'Guildlands',
     shortDescription: 'Browser based game',
     longDescription: 'Guildlands is a browser based web game. Uses a time based turn system and focuses on group management. Features a crafting system and live economy.',
-    link: 'https://github.com/jasonadams023/guildlands',
+    repoLink: 'https://github.com/jasonadams023/guildlands',
   },
   {
     title: 'Crazy Cab',
     shortDescription: 'Mobile game',
     longDescription: 'Mobile app built using Unity at the 2018 ThoughtWorks Game Jam.',
-    link: 'https://github.com/Cabby-Coders',
+    repoLink: 'https://github.com/Cabby-Coders',
   },
   {
     title: 'Tic Tac Toe',
     shortDescription: 'Tic Tac Toe implemented with React',
     longDescription: 'Tic Tac Toe app created using React and Redux.',
-    link: 'https://github.com/jasonadams023/tic_tac_toe',
+    repoLink: 'https://github.com/jasonadams023/tic_tac_toe',
+    siteLink: 'https://jasonadams023.github.io/tic_tac_toe/',
   },
   {
     title: 'Cookie Quest',
     shortDescription: 'Experimental game utilizing cookies',
     longDescription: 'Experimental project using cookies and a state machine to play a game.',
-    link: 'https://github.com/jasonadams023/cookie-quest-api',
+    repoLink: 'https://github.com/jasonadams023/cookie-quest-api',
   },
   {
     title: 'E-commerce',
     shortDescription: 'E-commerce template',
     longDescription: 'An e-commerce template. Has admin functionality for setting and managing inventory and orders. Uses Swipe for handling purchases.',
-    link: 'https://github.com/jasonadams023/e_commerce',
+    repoLink: 'https://github.com/jasonadams023/e_commerce',
   },
   {
     title: 'Movie Reviews',
     shortDescription: 'Movie review site',
     longDescription: 'Movie database project. Uses omdb api to gather information. Stores user data and reviews in PostgreSQL database.',
-    link: 'https://github.com/jasonadams023/omdb-api-project',
+    repoLink: 'https://github.com/jasonadams023/omdb-api-project',
   },
 ]
 
 export default function Portfolio() {
   const [displayContent, setDisplayContent] = useState(false);
   const [longDescription, setLongDescription] = useState('');
-  const [link, setLink] = useState('');
+  const [repoLink, setRepoLink] = useState('');
+  const [siteLink, setSiteLink] = useState(null);
 
-  function onClick(newDescription: string, newLink: string): void {
+  function onClick(newDescription: string, newRepoLink: string, newSiteLink?: string): void {
     if (displayContent && newDescription === longDescription) {
       setDisplayContent(false);
     } else {
       setDisplayContent(true);
       setLongDescription(newDescription);
-      setLink(newLink);
+      setRepoLink(newRepoLink);
+      setSiteLink(newSiteLink);
     }
   }
 
@@ -72,7 +76,7 @@ export default function Portfolio() {
         key={project.title}
         title={project.title}
         shortDescription={project.shortDescription}
-        callback={() => onClick(project.longDescription, project.link)}
+        callback={() => onClick(project.longDescription, project.repoLink, project.siteLink)}
       />
     );
   });
@@ -85,7 +89,7 @@ export default function Portfolio() {
         {projectSummaries}
       </ul>
 
-      { displayContent ? (<ExtendedDescription longDescription={longDescription} link={link} />) : null }
+      { displayContent ? (<ExtendedDescription longDescription={longDescription} repoLink={repoLink} siteLink={siteLink} />) : null }
     </section>
   );
 }
