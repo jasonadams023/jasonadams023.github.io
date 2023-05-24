@@ -25,6 +25,7 @@ const projects: Project[] = [
     shortDescription: 'Mobile game',
     longDescription: 'Mobile app built using Unity at the 2018 ThoughtWorks Game Jam.',
     repoLink: 'https://github.com/Cabby-Coders',
+    siteLink: 'https://thoughtworks.itch.io/crazy-cab',
   },
   {
     title: 'Tic Tac Toe',
